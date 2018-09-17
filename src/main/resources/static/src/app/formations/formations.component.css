@@ -1,0 +1,13 @@
+.btn-formation{
+  width: 250px;
+   margin: 5px;
+}
+
+.menu{
+  border: 1px solid #eeeeee;
+  box-shadow: 1px 3px 2px #cccccc;
+  height: 300px;
+}
+.menu > div{
+  padding-top: 5px;
+}

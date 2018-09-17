@@ -1,0 +1,35 @@
+<div class="menu col-md-3">
+<div *ngIf="formations">
+ <div *ngFor="let formation of formations._embedded.formations">
+   <button [ngClass]="formation.id == formationCourante.id?'btn btn-success btn-formation':'btn btn-primary btn-formation'" (click)="onGetAllStudents(formation)">{{formation.nom}}</button>
+ </div>
+</div>
+</div>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Liste des etudiants de la formation
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>N°</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Date Naissance</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="listEtudiant">
+        <tr *ngFor="let et of listEtudiant._embedded.etudiants">
+          <td>{{et.id}}</td>
+          <td>{{et.nom}}</td>
+          <td>{{et.prenom}}</td>
+          <td>{{et.dateNaissance}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
